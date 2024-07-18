@@ -15,7 +15,7 @@
     Projeto de um streaming de conteúdo gratuito, elaborado na 19ª turma do Programa de Formação Web FullStack Growdev.
     <br />
     <br />
-    <a href="(https://growflix-tawny.vercel.app/)">Demonstração</a>
+    <a href="https://growflix-tawny.vercel.app/">Demonstração</a>
     ·
     <a href="https://github.com/JoannaBraccini/Growflix/issues/new?labels=bug&template=bug-report---.md">Reportar Bug</a>
   </p>
