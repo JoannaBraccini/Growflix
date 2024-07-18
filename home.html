@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Growflix - Todos os vídeos da Growdev em um só lugar</title>
+    <link rel="icon" href="./assets/favicon.png" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="home container-fluid text-white expanded-header" id="top">
+      <nav class="navbar navbar-expand-lg d-flex align-items-baseline">
+        <a class="navbar-brand pt-0 ps-3 hvr-grow" href="./index.html">
+          <img
+            src="./assets/logo-growflix.svg"
+            alt="Logo Growflix"
+            width="120"
+            height="40"
+          />
+        </a>
+        <button
+          class="navbar-toggler navbar-dark"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active text-white hvr-sink"
+                aria-current="page"
+                href="./index.html"
+                >Início</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-secondary fw-medium hvr-sink"
+                href="#growcast-items"
+                >Growcast[episódios]</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-secondary fw-medium hvr-sink"
+                href="#webinar-items"
+                >Webinar em Flutter</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-secondary fw-medium hvr-sink"
+                href="#ux-ui-items"
+                >Jornada UX/UI</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-secondary fw-medium hvr-sink"
+                href="#general-items"
+                >Diversos</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div
+        class="container d-flex flex-column justify-content-center pt-md-5 mt-md-5"
+      >
+        <div class="row ms-md-5 ps-md-2 ps-md-5 pt-md-5 mt-md-5">
+          <div class="col pt-5 mt-5">
+            <p class="small fw-bolder mb-0 mt-5 pt-5">PODCAST</p>
+          </div>
+        </div>
+        <div class="row mb-2 ms-md-5 ps-md-5">
+          <div class="col">
+            <p class="display-1 fw-bolder">GROWCAST</p>
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="btn btn-light fw-bold hvr-grow"
+              data-bs-toggle="modal"
+              data-bs-target="#modalVideo"
+              id="header-play-btn"
+            >
+              <i class="bi bi-caret-right-fill px-1"></i>Assistir
+            </button>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="modalVideo"
+              tabindex="-1"
+              aria-labelledby="modalVideoLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content bg-transparent">
+                  <div
+                    class="modal-header d-flex justify-content-end border-bottom-0"
+                  >
+                    <button
+                      type="button"
+                      class="btn"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                      onclick="openVideo()"
+                    >
+                      <i class="bi bi-x-lg text-white fs-3"></i>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="ratio ratio-21x9" id="video-frame">
+                      <!-- Frame inserido dinamicamente -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container position-relative">
+      <section id="growcast-items">
+        <div class="h5 fw-bold p-2">
+          Growcast [Episódios]<i class="bi bi-caret-right-fill px-1 fs-6"></i>
+        </div>
+        <div class="row row-cols-md-4 px-2" id="growcast-thumbnails">
+          <!-- 10 Frames inseridos dinamicamente -->
+        </div>
+      </section>
+
+      <section id="webinar-items">
+        <div class="h5 fw-bold p-2">
+          Webinar em Flutter<i class="bi bi-caret-right-fill px-1 fs-6"></i>
+        </div>
+        <div class="row row-cols-md-4 px-2" id="flutter-thumbnails">
+          <!-- 5 Frames inseridos dinamicamente -->
+        </div>
+      </section>
+
+      <section id="ux-ui-items">
+        <div class="h5 fw-bold p-2">
+          Jornada UX/UI<i class="bi bi-caret-right-fill px-1 fs-6"></i>
+        </div>
+        <div class="row row-cols-md-4 px-2" id="uxui-thumbnails">
+          <!-- 5 Frames inseridos dinamicamente -->
+        </div>
+      </section>
+
+      <section id="general-items">
+        <div class="h5 fw-bold p-2">
+          Diversos<i class="bi bi-caret-right-fill px-1 fs-6"></i>
+        </div>
+        <div class="row row-cols-md-4 px-2" id="general-thumbnails">
+          <!-- 5 Frames inseridos dinamicamente -->
+        </div>
+      </section>
+    </main>
+
+    <hr
+      class="border border-secondary border-2 opacity-50 w-100 position-absolute start-0"
+    />
+
+    <footer class="container px-4 text-secondary">
+      <div class="row py-5 footer-text">
+        <div class="col">Dúvidas? Ligue 0800 591 8942</div>
+      </div>
+      <div class="row row-cols-2 row-cols-md-4 row-gap-3">
+        <div class="col">Perguntas frequentes</div>
+        <div class="col">Central de Ajuda</div>
+        <div class="col">Relações com investidores</div>
+        <div class="col">Carreiras</div>
+        <div class="col">Formas de assistir</div>
+        <div class="col">Termos de Uso</div>
+        <div class="col">Informações corporativas</div>
+        <div class="col">Entre em contato</div>
+        <div class="col">Só na Growflix</div>
+        <div class="col">Conta</div>
+        <div class="col">Media Center</div>
+        <div class="col">Resgatar cartão pré-pago</div>
+        <div class="col">Comprar cartão pré-pago</div>
+        <div class="col">Privacidade</div>
+        <div class="col">Preferências de cookies</div>
+        <div class="col">Teste de velocidade</div>
+        <div class="col">Avisos legais</div>
+      </div>
+      <div class="row py-5 footer-text">
+        <div class="col">Growflix Growdev</div>
+      </div>
+    </footer>
+
+    <a href="#top" id="back-to-top"><i class="bi bi-chevron-double-up"></i></a>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
